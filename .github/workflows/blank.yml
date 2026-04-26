@@ -28,4 +28,8 @@ jobs:
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/dockerproject:latest
 
-    
+    - name: Deploy Frontend
+      run: curl ${{ secrets.RENDER_FRONTEND_DEPLOY_HOOK }}
+
+    - name: Deploy Backend
+      run: curl ${{ secrets.RENDER_BACKEND_DEPLOY_HOOK }}
